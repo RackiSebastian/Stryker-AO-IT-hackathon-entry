@@ -75,14 +75,43 @@ class HomeView extends StatelessWidget {
                       style: TextStyle(color: Colors.black, fontSize: 60),
                     ),
                   ]),
-              Container(
-                height: 500,
-                width: 500,
-                decoration: BoxDecoration(
-                    color: Colors.black,
-                    image: DecorationImage(
-                        image: AssetImage("assets/images/map.JPG"),
-                        fit: BoxFit.fill)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    height: 500,
+                    width: 500,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/map.JPG"),
+                            fit: BoxFit.fill)),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    height: 500,
+                    width: 500,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/map.JPG"),
+                            fit: BoxFit.fill)),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    height: 500,
+                    width: 500,
+                    decoration: BoxDecoration(
+                        color: Colors.black,
+                        image: DecorationImage(
+                            image: AssetImage("assets/images/map.JPG"),
+                            fit: BoxFit.fill)),
+                  ),
+                ],
               ),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,

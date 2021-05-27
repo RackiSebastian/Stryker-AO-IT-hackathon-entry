@@ -36,22 +36,13 @@ class _RegisterState extends State<Register> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Stryker",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 100,
-                          shadows: <Shadow>[
-                            Shadow(
-                                offset: Offset(3, 3),
-                                blurRadius: 10.0,
-                                color: Colors.orange)
-                          ]),
-                    ),
-                    Text("     "),
-                    Text(
-                      "Smiles",
-                      style: TextStyle(color: Colors.yellow, fontSize: 100),
+                    Container(
+                      height: 200,
+                      width: 600,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage("assets/images/stryker.png"),
+                              fit: BoxFit.fill)),
                     )
                   ],
                 ),

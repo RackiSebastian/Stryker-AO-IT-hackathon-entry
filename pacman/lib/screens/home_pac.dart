@@ -16,9 +16,9 @@ class _PacHomeState extends State<PacHome> {
   static int numberInRow = 30;
   int numberOfSquares = numberInRow * 20;
   int round = 0;
-  int player = 82;
+  int player = 328;
   Timer _timer;
-  int _start = 2;
+  int _start = 15;
   int score = 0;
   List<int> food = [];
   List<int> foodGone = [];
@@ -245,11 +245,18 @@ class _PacHomeState extends State<PacHome> {
     300,
     330,
   ];
-
+  List<int> barrriersThree = [];
+  List<int> barriersFour = [];
+  List<int> barriersFive = [];
+  List<int> barriersSix = [];
   String direction;
 
   void moveLeft() {
-    if (!barriers.contains(player - 1) && !barriersTwo.contains(player - 1)) {
+    if (!barriers.contains(player - 1) &&
+        !barriersTwo.contains(player - 1) &&
+        !barrriersThree.contains(player - 1) &&
+        !barriersFour.contains(player - 1) &&
+        !barriersFive.contains(player - 1)) {
       setState(() {
         player--;
       });
@@ -257,7 +264,12 @@ class _PacHomeState extends State<PacHome> {
   }
 
   void moveRight() {
-    if (!barriers.contains(player + 1) && !barriersTwo.contains(player + 1)) {
+    if (!barriers.contains(player + 1) &&
+        !barriersTwo.contains(player + 1) &&
+        !barrriersThree.contains(player + 1) &&
+        !barriersFour.contains(player + 1) &&
+        !barriersFive.contains(player + 1) &&
+        !barriersSix.contains(player + 1)) {
       setState(() {
         player++;
       });
@@ -266,7 +278,11 @@ class _PacHomeState extends State<PacHome> {
 
   void moveUp() {
     if (!barriers.contains(player - numberInRow) &&
-        !barriersTwo.contains(player - numberInRow)) {
+        !barriersTwo.contains(player - numberInRow) &&
+        !barrriersThree.contains(player - numberInRow) &&
+        !barriersFour.contains(player - numberInRow) &&
+        !barriersFive.contains(player - numberInRow) &&
+        !barriersSix.contains(player - numberInRow)) {
       setState(() {
         player -= numberInRow;
       });
@@ -275,7 +291,11 @@ class _PacHomeState extends State<PacHome> {
 
   void moveDown() {
     if (!barriers.contains(player + numberInRow) &&
-        !barriersTwo.contains(player + numberInRow)) {
+        !barriersTwo.contains(player + numberInRow) &&
+        !barriersTwo.contains(player + numberInRow) &&
+        !barrriersThree.contains(player + numberInRow) &&
+        !barriersFour.contains(player + numberInRow) &&
+        !barriersFive.contains(player + numberInRow)) {
       setState(() {
         player += numberInRow;
       });
@@ -284,7 +304,12 @@ class _PacHomeState extends State<PacHome> {
 
   void getFood() {
     for (int i = 0; i < numberOfSquares; i++) {
-      if (!barriers.contains(i) || !barriersTwo.contains(i)) {
+      if (!barriers.contains(i) ||
+          !barriersTwo.contains(i) ||
+          !barrriersThree.contains(i) ||
+          !barriersFour.contains(i) ||
+          !barriersFive.contains(i) ||
+          !barriersSix.contains(i)) {
         food.add(i);
       }
     }
@@ -302,8 +327,9 @@ class _PacHomeState extends State<PacHome> {
           score = 0;
           food = [];
           foodGone = [];
+          player = 181;
           if (round == 1) {
-            _start = 10;
+            _start = 15;
             startGame();
             direction = null;
             barriers = [
@@ -395,7 +421,36 @@ class _PacHomeState extends State<PacHome> {
             ];
             barriersTwo = [
               31,
+              361,
+              362,
+              363,
+              364,
+              365,
+              366,
+              367,
+              368,
+              369,
+              370,
+              371,
+              372,
+              373,
+              374,
+              375,
+              376,
+              377,
+              378,
+              379,
+              380,
+              381,
+              382,
+              383,
+              384,
+              385,
+              386,
+              387,
+              388,
               32,
+              335,
               33,
               34,
               35,
@@ -552,8 +607,9 @@ class _PacHomeState extends State<PacHome> {
             ];
           }
           if (round == 2) {
-            _start = 10;
+            _start = 15;
             startGame();
+
             direction = null;
             barriers = [
               1,
@@ -675,7 +731,173 @@ class _PacHomeState extends State<PacHome> {
             ];
           }
           if (round == 3) {
-            player = -1;
+            _start = 15;
+            startGame();
+            direction = null;
+            barriers = [];
+            barriersTwo = [];
+            barrriersThree = [
+              0,
+              360,
+              389,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              60,
+              90,
+              120,
+              150,
+              180,
+              210,
+              240,
+              270,
+              300,
+              330,
+              390,
+              391,
+              392,
+              393,
+              394,
+              395,
+              396,
+              397,
+              398,
+              399,
+              400,
+              401,
+              402,
+              403,
+              404,
+              405,
+              406,
+              407,
+              408,
+              409,
+              410,
+              411,
+              412,
+              413,
+              414,
+              415,
+              416,
+              417,
+              418,
+              419,
+              59,
+              89,
+              119,
+              149,
+              179,
+              209,
+              239,
+              269,
+              299,
+              329,
+              359,
+              122,
+              123,
+              124,
+              125,
+              126,
+              127,
+              128,
+              66,
+              96,
+              156,
+              186,
+              216,
+              246,
+              247,
+              248,
+              242,
+              243,
+              244,
+              184,
+              214,
+              182,
+              183,
+              152,
+              77,
+              107,
+              137,
+              167,
+              197,
+              227,
+              257,
+              168,
+              198,
+              110,
+              229,
+              260,
+              139,
+            ];
+            barriersFour = [
+              129,
+              159,
+              189,
+              219,
+              249,
+              130,
+              131,
+              145,
+              175,
+              205,
+              235,
+              265,
+              146,
+              147,
+            ];
+            barriersFive = [
+              132,
+              163,
+              194,
+              224,
+              254,
+              165,
+              136,
+            ];
+            barriersSix = [
+              141,
+              171,
+              201,
+              231,
+              262,
+              263,
+              264,
+              172,
+              173,
+              174,
+              144,
+              112,
+              113,
+            ];
           }
         });
       } else {
@@ -685,7 +907,7 @@ class _PacHomeState extends State<PacHome> {
       }
     });
 
-    Timer.periodic(Duration(milliseconds: 100), (timer) {
+    Timer.periodic(Duration(milliseconds: 500), (timer) {
       if (food.contains(player)) {
         score++;
         food.remove(player);
@@ -740,7 +962,13 @@ class _PacHomeState extends State<PacHome> {
                     crossAxisCount: numberInRow),
                 itemBuilder: (BuildContext context, int index) {
                   if (player == index) {
-                    return myPlayer();
+                    switch (direction) {
+                      case "left":
+                        return Transform.rotate(angle: pi, child: myPlayer());
+
+                      default:
+                        return myPlayer();
+                    }
                   } else if (barriers.contains(index)) {
                     return pixel(
                       innerColor: Colors.blue[800],
@@ -752,20 +980,61 @@ class _PacHomeState extends State<PacHome> {
                     return myPath(
                       innerColor: Colors.black,
                       outerColor: Colors.black,
-                      child: Text(index.toString()),
                     );
                   } else if (!barriersTwo.contains(index) &&
                       foodGone.contains(index)) {
                     return myPath(
                       innerColor: Colors.black,
                       outerColor: Colors.black,
-                      child: Text(index.toString()),
                     );
                   } else if (barriersTwo.contains(index)) {
                     return pixel(
                       innerColor: Colors.orange,
                       outerColor: Colors.orange,
-                      child: Text(index.toString()),
+                    );
+                  } else if (barrriersThree.contains(index)) {
+                    return pixel(
+                      innerColor: Colors.blue,
+                      outerColor: Colors.blue,
+                    );
+                  } else if (!barrriersThree.contains(index) &&
+                      foodGone.contains(index)) {
+                    return myPath(
+                      innerColor: Colors.black,
+                      outerColor: Colors.black,
+                    );
+                  } else if (barriersFour.contains(index)) {
+                    return pixel(
+                      innerColor: Colors.red,
+                      outerColor: Colors.red,
+                    );
+                  } else if (!barriersFour.contains(index) &&
+                      foodGone.contains(index)) {
+                    return myPath(
+                      innerColor: Colors.black,
+                      outerColor: Colors.black,
+                    );
+                  } else if (barriersFive.contains(index)) {
+                    return pixel(
+                      innerColor: Colors.yellow,
+                      outerColor: Colors.yellow,
+                    );
+                  } else if (!barriersFive.contains(index) &&
+                      foodGone.contains(index)) {
+                    return myPath(
+                      innerColor: Colors.black,
+                      outerColor: Colors.black,
+                    );
+                  } else if (barriersSix.contains(index)) {
+                    return pixel(
+                      innerColor: Colors.green,
+                      outerColor: Colors.green,
+                    );
+                  } else if (!barriersSix.contains(index) &&
+                      foodGone.contains(index)) {
+                    return myPath(
+                      innerColor: Colors.black,
+                      outerColor: Colors.black,
                     );
                   } else {
                     return myPath(
